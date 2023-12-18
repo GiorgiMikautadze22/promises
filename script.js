@@ -149,7 +149,17 @@ const test = characters.last();
 //1. შევქმნათ ფრომისი. იმის შანსი რომ ფრომისი ან დარეზოლვდება ან დარეჯექთდება უნდა იყოს 50/50.
 //ანუ ზოგიერთ გამოძახებაზე უნდა დარეჯექთდეს.
 
-// could not understand the question
+const myPromise = new Promise((res, rej) => {
+  const randomNumber = Math.floor(Math.random() * 100);
+  console.log(randomNumber);
+  if (randomNumber % 2 === 0) {
+    return res("success");
+  } else {
+    return rej("failure");
+  }
+});
+
+myPromise.then(console.log).catch(console.log);
 
 //2. დავწეროთ ფუნქცია რომელიც წამოიღებს მონაცემებს https://jsonplaceholder.typicode.com/users დან
 //და დაბრუნებს ამ მონაცემებს
